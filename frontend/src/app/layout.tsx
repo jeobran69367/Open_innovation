@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { ThemeProvider } from '@/components/ui/theme-provider';
 import { Header } from '@/components/ui/Header';
 import { Footer } from '@/components/ui/Footer';
 import '@/styles/globals.css';
@@ -32,12 +33,14 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
       </head>
-      <body className="bg-white dark:bg-slate-950">
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
+      <body className="bg-background text-foreground">
+        <ThemeProvider>
+          <Header />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
