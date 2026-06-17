@@ -1,16 +1,18 @@
+import { ThemeProvider } from '@/components/ui/theme-provider'
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <body>
-        {/* TODO: Add Navigation */}
-        <main>
-          {children}
-        </main>
-        {/* TODO: Add Footer */}
+        <ThemeProvider>
+          <main className="min-h-screen bg-background text-foreground">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )
