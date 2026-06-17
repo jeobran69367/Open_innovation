@@ -8,14 +8,14 @@ from sqlalchemy.orm import Session
 from sqlalchemy import desc
 
 from app.models import Project
-from app.schemas import PaginatedResponse, ProjectResponse
+from app.schemas import PaginatedProjectResponse, ProjectResponse
 from app.db.session import get_db
 from app.core.config import settings
 
 router = APIRouter()
 
 
-@router.get("/", response_model=PaginatedResponse[ProjectResponse])
+@router.get("/", response_model=PaginatedProjectResponse)
 async def list_projects(
     skip: int = Query(0, ge=0, description="Number of items to skip"),
     limit: int = Query(20, ge=1, le=100, description="Number of items to return"),
@@ -67,7 +67,7 @@ async def list_projects(
     has_next = page < total_pages
     has_previous = page > 1
     
-    return PaginatedResponse(
+    return PaginatedProjectResponse(
         items=[ProjectResponse.from_orm(item) for item in items],
         total=total,
         page=page,

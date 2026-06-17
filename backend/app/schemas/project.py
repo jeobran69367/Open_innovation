@@ -43,3 +43,14 @@ class ProjectResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class PaginatedProjectResponse(BaseModel):
+    """Paginated response for projects"""
+    items: List[ProjectResponse]
+    total: int = Field(..., description="Total number of items")
+    page: int = Field(..., ge=1, description="Current page number")
+    page_size: int = Field(..., ge=1, description="Items per page")
+    total_pages: int = Field(..., ge=0, description="Total number of pages")
+    has_next: bool = Field(..., description="Whether there is a next page")
+    has_previous: bool = Field(..., description="Whether there is a previous page")
