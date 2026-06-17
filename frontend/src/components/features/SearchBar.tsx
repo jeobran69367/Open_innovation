@@ -109,7 +109,7 @@ export const SearchBar: React.FC = () => {
     if (selectedIndex >= 0 && listboxRef.current) {
       const items = listboxRef.current.querySelectorAll("li");
       const selectedItem = items[selectedIndex];
-      if (selectedItem) {
+      if (selectedItem && selectedItem.scrollIntoView) {
         selectedItem.scrollIntoView({ block: "nearest" });
       }
     }
