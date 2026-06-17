@@ -8,7 +8,7 @@ export function Card({ className, children, ...props }: CardProps) {
   return (
     <section
       className={clsx(
-        'rounded-3xl border border-border bg-surface p-6 shadow-surface transition-colors',
+        'rounded-2xl border border-border bg-surface p-8 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-primary/20',
         className
       )}
       {...props}

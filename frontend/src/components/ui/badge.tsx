@@ -3,11 +3,11 @@ import clsx from 'clsx'
 export type BadgeVariant = 'primary' | 'secondary' | 'success' | 'warning' | 'danger'
 
 const badgeStyles: Record<BadgeVariant, string> = {
-  primary: 'bg-primary/10 text-primary',
-  secondary: 'bg-slate-100 text-foreground',
-  success: 'bg-success/10 text-success',
-  warning: 'bg-warning/10 text-warning',
-  danger: 'bg-danger/10 text-danger',
+  primary: 'bg-gradient-to-r from-primary/15 to-primary/5 text-primary border border-primary/20',
+  secondary: 'bg-slate-100/50 text-foreground border border-border',
+  success: 'bg-gradient-to-r from-success/15 to-success/5 text-success border border-success/20',
+  warning: 'bg-gradient-to-r from-warning/15 to-warning/5 text-warning border border-warning/20',
+  danger: 'bg-gradient-to-r from-danger/15 to-danger/5 text-danger border border-danger/20',
 }
 
 interface BadgeProps {
@@ -20,7 +20,7 @@ export function Badge({ variant = 'secondary', className, children }: BadgeProps
   return (
     <span
       className={clsx(
-        'inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.08em]',
+        'inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-widest transition-all duration-200',
         badgeStyles[variant],
         className
       )}
