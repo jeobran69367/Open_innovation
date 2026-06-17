@@ -2,9 +2,8 @@
 Authentication endpoints
 """
 
-from datetime import timedelta
-from fastapi import APIRouter, HTTPException, Depends, Response
-from fastapi.responses import JSONResponse
+from datetime import datetime, timedelta
+from fastapi import APIRouter, HTTPException, Response
 from pydantic import BaseModel
 
 from app.core.security import (
@@ -155,7 +154,9 @@ async def logout(request: LogoutRequest, response: Response):
         try:
             payload = verify_token(refresh_token, token_type="refresh")
             # Add to blacklist for remaining token lifetime
-            expires_in = int(payload.get("exp", 0) - __import__('datetime').datetime.utcnow().timestamp())
+            exp_timestamp = payload.get("exp", 0)
+            current_timestamp = datetime.utcnow().timestamp()
+            expires_in = int(exp_timestamp - current_timestamp)
             if expires_in > 0:
                 revoke_token(refresh_token, expires_in)
         except Exception:
