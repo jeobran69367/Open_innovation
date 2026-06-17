@@ -7,7 +7,6 @@ import { projectService } from '@/services/projectService';
 import { ProjectCard } from '@/components/features/ProjectCard';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 
 /**
  * CatalogContent - main content component

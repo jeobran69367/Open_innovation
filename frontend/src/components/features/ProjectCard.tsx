@@ -85,12 +85,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
       {/* Links */}
       <div className="flex gap-2 pt-4 border-t">
         <Link href={project.url} target="_blank" rel="noopener noreferrer" className="flex-1">
-          <Button variant="primary" className="w-full" size="sm">
+          <Button variant="primary" className="w-full">
             View on GitHub
           </Button>
         </Link>
         <Link href={`/catalog/${project.id}`} className="flex-1">
-          <Button variant="secondary" className="w-full" size="sm">
+          <Button variant="secondary" className="w-full">
             Details
           </Button>
         </Link>
