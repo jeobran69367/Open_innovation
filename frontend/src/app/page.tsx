@@ -309,60 +309,6 @@ export default function Home() {
           </Card>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="relative px-4 py-16 border-t border-border/50 bg-surface/30">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <h4 className="font-bold mb-6 text-foreground">Produit</h4>
-              <ul className="space-y-3 text-sm text-muted">
-                <li><a href="#" className="hover:text-primary transition">Fonctionnalités</a></li>
-                <li><a href="#" className="hover:text-primary transition">Tarification</a></li>
-                <li><a href="#" className="hover:text-primary transition">Changelog</a></li>
-                <li><a href="#" className="hover:text-primary transition">Statut</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-foreground">Ressources</h4>
-              <ul className="space-y-3 text-sm text-muted">
-                <li><a href="#" className="hover:text-primary transition">Documentation</a></li>
-                <li><a href="#" className="hover:text-primary transition">API</a></li>
-                <li><a href="#" className="hover:text-primary transition">Tutoriels</a></li>
-                <li><a href="#" className="hover:text-primary transition">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-foreground">Entreprise</h4>
-              <ul className="space-y-3 text-sm text-muted">
-                <li><a href="#" className="hover:text-primary transition">À propos</a></li>
-                <li><a href="#" className="hover:text-primary transition">Carrières</a></li>
-                <li><a href="#" className="hover:text-primary transition">Contact</a></li>
-                <li><a href="#" className="hover:text-primary transition">Presse</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-6 text-foreground">Légal</h4>
-              <ul className="space-y-3 text-sm text-muted">
-                <li><a href="#" className="hover:text-primary transition">Confidentialité</a></li>
-                <li><a href="#" className="hover:text-primary transition">Conditions</a></li>
-                <li><a href="#" className="hover:text-primary transition">Cookies</a></li>
-                <li><a href="#" className="hover:text-primary transition">Licences</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
-            <p>&copy; 2024 Open Innovation. Tous droits réservés.</p>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition">Twitter</a>
-              <a href="#" className="hover:text-primary transition">GitHub</a>
-              <a href="#" className="hover:text-primary transition">LinkedIn</a>
-              <a href="#" className="hover:text-primary transition">Discord</a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }
