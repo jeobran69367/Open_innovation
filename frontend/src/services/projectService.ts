@@ -3,7 +3,7 @@
  */
 
 import { apiClient } from "@/lib/api";
-import { Project, PaginatedResponse } from "@/types";
+import { Project, PaginatedResponse, Comment } from "@/types";
 
 export const projectService = {
   /**
@@ -21,6 +21,20 @@ export const projectService = {
    */
   async getProject(id: number): Promise<Project> {
     return apiClient.get(`/v1/projects/${id}`);
+  },
+
+  /**
+   * Get project comments
+   */
+  async getProjectComments(projectId: number): Promise<Comment[]> {
+    return apiClient.get(`/v1/comments/${projectId}`);
+  },
+
+  /**
+   * Add comment to project
+   */
+  async addComment(projectId: number, content: string): Promise<Comment> {
+    return apiClient.post(`/v1/comments/${projectId}`, { content });
   },
 
   /**
