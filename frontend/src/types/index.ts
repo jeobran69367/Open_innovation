@@ -13,6 +13,12 @@ export interface Project {
   qualityScore?: number;
   maturityLevel?: string;
   category?: string;
+  license?: string;
+  aiSummary?: string;
+  readme?: string;
+  lastUpdated?: string;
+  commitsCount?: number;
+  releasesCount?: number;
 }
 
 export interface User {
@@ -30,6 +36,8 @@ export interface Comment {
   projectId: number;
   createdAt: string;
   updatedAt?: string;
+  user?: User;
+  likes?: number;
 }
 
 export interface SearchResult {
