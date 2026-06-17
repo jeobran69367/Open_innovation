@@ -39,6 +39,13 @@ export interface SearchResult {
   reason: string;
 }
 
+export interface AutocompleteSuggestion {
+  type: "project" | "category";
+  label: string;
+  value: string;
+  description?: string;
+}
+
 export interface ApiResponse<T> {
   data: T;
   message?: string;
