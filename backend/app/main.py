@@ -36,6 +36,11 @@ app.add_middleware(
     allowed_hosts=settings.ALLOWED_HOSTS,
 )
 
+# CSRF Protection Middleware (if enabled)
+if settings.CSRF_ENABLED:
+    from app.middleware.csrf import CSRFProtectionMiddleware
+    app.add_middleware(CSRFProtectionMiddleware)
+
 # ============================================================================
 # HEALTH CHECK
 # ============================================================================
