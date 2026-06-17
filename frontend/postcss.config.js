@@ -1,8 +1,4 @@
-/**
- * PostCSS Configuration
- */
-
-export default {
+module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {},
