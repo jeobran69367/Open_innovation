@@ -3,7 +3,7 @@
  */
 
 import { apiClient } from "@/lib/api";
-import { SearchResult } from "@/types";
+import { SearchResult, AutocompleteSuggestion } from "@/types";
 
 export const searchService = {
   /**
@@ -19,7 +19,7 @@ export const searchService = {
   /**
    * Get search suggestions
    */
-  async getAutocompleteSuggestions(query: string): Promise<{ suggestion: string }[]> {
+  async getAutocompleteSuggestions(query: string): Promise<AutocompleteSuggestion[]> {
     return apiClient.get(`/v1/search/autocomplete?q=${encodeURIComponent(query)}`);
   },
 };
